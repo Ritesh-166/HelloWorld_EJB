@@ -1,0 +1,21 @@
+<server description="Open Liberty Server">
+    <featureManager>
+        <feature>jaxrs-2.1</feature>
+        <feature>ejbLite-3.2</feature>
+<!--        <feature>enterpriseBeansLite-4.0</feature>-->
+    </featureManager>
+
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="9080"
+                  httpsPort="9443" />
+
+    <application id="test"
+                 location="test.war"
+                 type="war" />
+
+<!--    <webApplication contextRoot="/test" location="test.war" />-->
+
+    <library id="test-lib">
+        <fileset dir="${shared.resource.dir}" includes="test-1.0-SNAPSHOT.jar" />
+    </library>
+</server>
